@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const mongooseIncrement = require('mongoose-increment');
 const increment = mongooseIncrement(mongoose);
 
-app.use(cors())
+app.use(cors({origin: ["https://tourdeshotesham.com", "http://localhost:3000"]}))
 app.use(bodyParser.json())
 
 require('dotenv').config()
