@@ -2,7 +2,6 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
-const port = 5000
 const mongoose = require('mongoose');
 const mongooseIncrement = require('mongoose-increment');
 const increment = mongooseIncrement(mongoose);
@@ -12,7 +11,7 @@ app.use(bodyParser.json())
 
 require('dotenv').config()
 
-mongoose.connect(`mongodb://${process.env.MONGO_URI}`, {useNewUrlParser: true, useFindAndModify: true});
+mongoose.connect(`mongodb://${process.env.PORT}`, {useNewUrlParser: true, useFindAndModify: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
