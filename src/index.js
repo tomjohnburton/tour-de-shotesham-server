@@ -92,4 +92,4 @@ app.post("/slot", (req, res) => {
         .catch(error => res.status(500).send({error}))
 })
 
-app.listen(process.env.PORT, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(process.env.PORT, () => console.log(`Example app listening at http://localhost:${process.env.PORT}`))
