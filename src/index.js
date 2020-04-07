@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 
 require('dotenv').config()
 
-mongoose.connect(`mongodb://${process.env.PORT}`, {useNewUrlParser: true, useFindAndModify: true});
+mongoose.connect(`mongodb://${process.env.MONGO_URI}`, {useNewUrlParser: true, useFindAndModify: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -92,4 +92,4 @@ app.post("/slot", (req, res) => {
         .catch(error => res.status(500).send({error}))
 })
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(process.env.PORT, () => console.log(`Example app listening at http://localhost:${port}`))
