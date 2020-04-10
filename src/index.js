@@ -28,7 +28,8 @@ const signUpSchema = new mongoose.Schema({
 const slotSchema = new mongoose.Schema({
     slot: {type: String, required: true},
     date: {type: String, required: true},
-    raceNumber: {type: Number, required: true}
+    raceNumber: {type: Number, required: true},
+    name: {type: String, required: true}
 });
 
 signUpSchema.plugin(increment, {
@@ -52,6 +53,7 @@ app.post('/', (req, res) => {
             const slotData = {
                 slot: data.slot,
                 date: data.date,
+                name: data.name,
                 raceNumber: result.raceNumber
             }
             Slot.create(slotData)
