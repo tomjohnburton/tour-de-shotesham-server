@@ -30,7 +30,6 @@ const slotSchema = new mongoose.Schema({
     date: {type: String, required: true},
     raceNumber: {type: Number, required: true}
 });
-slotSchema.index({slot: 1, date: 1}, {unique: true})
 
 signUpSchema.plugin(increment, {
     modelName: 'SignUp',
@@ -85,11 +84,11 @@ app.post("/submit", (req, res) => {
     })
 })
 
-app.post("/slot", (req, res) => {
-    const data = req.body
-    Slot.findOne(data)
-        .then((result) => result === null ? res.status(200).send({result}) : res.status(400).send({result}))
-        .catch(error => res.status(500).send({error}))
-})
+// app.post("/slot", (req, res) => {
+//     const data = req.body
+//     Slot.findOne(data)
+//         .then((result) => result === null ? res.status(200).send({result}) : res.status(400).send({result}))
+//         .catch(error => res.status(500).send({error}))
+// })
 
 app.listen(process.env.PORT, () => console.log(`Example app listening at http://localhost:${process.env.PORT}`))
