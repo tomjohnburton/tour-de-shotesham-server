@@ -51,12 +51,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586194244951</updated>
-      <workItem from="1586194246582" duration="17132000" />
+      <workItem from="1586194246582" duration="17814000" />
+      <workItem from="1587479985178" duration="995000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="202" key="#ESLint" timestamp="1586194394184">
