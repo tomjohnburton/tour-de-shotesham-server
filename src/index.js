@@ -93,7 +93,7 @@ app.get("/slot", (req, res) => {
 })
 
 app.get("/times", (req, res) => {
-    SignUp.find().select("name submittedTime raceNumber").then(result => res.status(200).send(result))
+    SignUp.find().select("name submittedTime raceNumber ageCategory").then(result => res.status(200).send(result))
 })
 
 app.listen(process.env.PORT, () => console.log(`Example app listening at http://localhost:${process.env.PORT}`))
